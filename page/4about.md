@@ -35,7 +35,7 @@ type: page
 
 ## 友情链接
 
-[google](http://www.google.com) \| [百度](https://www.baidu.com) \)
+([google](http://www.google.com) \| [百度](https://www.baidu.com) \)
 
 ## Comments
 
