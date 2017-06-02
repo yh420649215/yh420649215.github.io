@@ -63,15 +63,15 @@ public class MySingleton2 {
 public class MySingleton3 {
 	private MySingleton3() {
 	}
-	private static class getSingleton {
+	private static class SingletonHolder {
 		private static final MySingleton3 mySingleton3 = new MySingleton3();
 	}
 	public static MySingleton3 getMySingleton() {
-		return getSingleton.mySingleton3;
+		return SingletonHolder.mySingleton3;
 	}
 }
 ```
-这种方式利用了 classloder 的机制来保证初始化 instance 时只会有一个。需要注意的是：虽然它的名字中有“静态”两字，但它是属于“懒汉模式”的！！这种方式的 Singleton 类被装载时，只要 SingletonHolder 类还没有被主动使用，instance 就不会被初始化。只有在显式调用 getInstance() 方法时，才会装载 SingletonHolder 类，从而实例化对象。
+这种方式利用了 classloder 的机制来保证初始化 instance 时只会有一个。需要注意的是：虽然它的名字中有“静态”两字，但它是属于“懒汉模式”的！！这种方式的 MySingleton3 类被装载时，只要 SingletonHolder 类还没有被主动使用，instance 就不会被初始化。只有在显式调用 getMySingleton() 方法时，才会装载 SingletonHolder 类，从而实例化对象。
 
 “静态内部类”方式基本上弥补了 DCL 方式在 JDK 版本低于 1.5 时高并发环境失效的缺陷。《Java并发编程实践》中也指出 DCL 方式的“优化”是丑陋的，对静态内部类方式推崇备至。但是可能因为同大家创建单例时的思考习惯不太一致（根据单例模式的特点，一般首先想到的是通过 instance 判空来确保单例），此方式并不特别常见，然而它是所有懒加载的单例实现中适用范围最广、限制最小、最为推荐的一种。
 - 枚举单例

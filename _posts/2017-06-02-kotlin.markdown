@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "怎么在android studio中使用kotlin编程"
+date:   2017-06-02 15:41:15
+categories: Kotlin
+tags: kotlin
+excerpt: as使用kotlin的入门第一式
+---
+- 安装Kotlin插件
+
+	Kotlin插件与3.0版本的 Android Studio捆绑在一起。如果您使用的是较早版本，则需要安装Kotlin插件。插件安装完成后， 需要重新启动as。
+
+- 创建一个as项目
+
+- 将Java代码转换为Kotlin
+	
+	注意在Android Studio 3.0中可以跳过此步骤。
+	打开MainActivity.java文件，调出下图，并输入convert java file to kotlin ,点击搜索出来的结果。
+	![](http://kotlinlang.org/assets/images/tutorials/kotlin-android/convert-java-to-kotlin.png)
+	点击后应该会有一个正在转换的对话框，转换完成后你就会看到你的JAVA代码已经转换成kotlin的了。如下图
+	![](http://kotlinlang.org/assets/images/tutorials/kotlin-android/converted-code.png)
+	
+- 在项目中配置Kotlin
+
+	在Android Studio 3.0中，这一步也可以省略。
+	如果您开始写代码，Android Studio会显示Kotlin未配置的提示，因此可以进行配置。点击下图鼠标所指的地方
+	![](http://kotlinlang.org/assets/images/tutorials/kotlin-android/kotlin-not-configured.png)
+	然后会提示选择Kotlin版本。选择最新版本就好了。然后as就会自动帮你配置好。
+
+- 同步项目
+
+	点击“Sync now”，同步项目。
+
+###### 本文翻译自kotlin的官方文档：[Getting started with Android and Kotlin](http://kotlinlang.org/docs/tutorials/kotlin-android.html)
